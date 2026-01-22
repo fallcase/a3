@@ -10,15 +10,21 @@
       src="https://telegram.org/js/telegram-web-app.js"
       crossorigin="anonymous"
     ></script>
+    <script>
+      window.onload = function () {
+        if (!window.Telegram || !window.Telegram.WebApp) return;
+
+        const tg = window.Telegram.WebApp;
+
+        tg.ready();
+
+        tg.openTelegramLink(
+          "https://t.me/RocketCaseBot/app?startapp=ref_Io0FaZ21"
+        );
+  
+        tg.close();
+      };
+    </script>
   </head>
-  <script>
-    window.Telegram.WebApp.init();
-
-    window.Telegram.WebApp.openTelegramLink(
-      "https://t.me/RocketCaseBot/app?startapp=ref_Io0FaZ21",
-    );
-
-    window.Telegram.WebApp.close();
-  </script>
   <body></body>
 </html>
